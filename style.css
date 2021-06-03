@@ -1,0 +1,11 @@
+.item{
+    border: 1px solid black;
+    width: 40%;
+}
+.item span{
+    padding: 10px;
+}
+
+body{
+    padding: 35px;
+}
