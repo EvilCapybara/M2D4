@@ -1,71 +1,47 @@
+window.onload = function(){
+    createTeams()
+}
 
-let container = document.getElementById('container')
+
+
+let body = document.getElementsByTagName('body')[0]
+let container = document.getElementById('containerOne')
 let inputText = document.querySelector('.text')
-let container2 = document.getElementById('container2')
-let inputText2 = document.querySelector('.text2')
+let amountOfTeams = prompt("How many teams?");
 
-const container3 = document.getElementById('container3')
-let people = ["raia", "sarath"]
 
+
+
+
+let randomUl = document.getElementsByTagName("ul")[0]
+
+function lookingForRandomTeam (){
+    for (let i = 0; i < randomUl.length ; i++){
+    }
+    return i
+}
+
+
+
+let people = []
 inputText.value = ""
 
+
+//------------------------------------------Adding peoples names----------------------
 function addTeamOne (){
     const valueText = inputText.value
     if (valueText !== ''){
-        container.innerHTML += `<div class="item"><span>`+ valueText + '</span></div>' 
-        people.push({text:valueText})
-        inputText.value = ""
+        
+    container.innerHTML += `<div class="item"><span>`+ valueText + '</span></div>' 
+    people.push(valueText)
+        
     }
     else{
         alert("Error:empty fields")
     }
     inputText.focus()
-    return people
+    inputText.value = ""
 }
-
-
-function addTeamTwo (){
-    const valueText2 = inputText2.value
-    if (valueText2 !== ''){
-        container2.innerHTML += `<div class="item"><span>`+ valueText2 + '</span></div>' 
-        people.push({text:valueText2})
-        inputText2.value = ""
-    }
-    else{
-        alert("Error:empty fields")
-    }
-    inputText2.focus()
-    return people
-}
-
-// console.log(people)
-
-// let arrayPeople = people.length
-
-
-// function assign(){
-//     const valueText = inputText.value
-//     if(valueText !== ''){
-//         container.innerHTML += `<div class="item"><span>`+ valueText + '</span></div>'
-//         people.push({text:valueText})
-//         inputText.value = ""
-//     }
-        
-        
-
-
-    // const random = Math.floor(Math.random()*arrayPeople)
-    
-
-// }
-
-
-
-
-
-
-
-
 
 
 
@@ -79,10 +55,81 @@ function clearHTML(){
     container.innerHTML = ""
     inputText.focus()
 }
-function clearHTML2(){
-    container2.innerHTML = ""
-    inputText2.focus()
+
+
+
+
+//-----------------Assign button-----------------
+// function assign(){
+//     container.innerHTML.randomUl +=`<li>` + valueText + `</li>`
+
+// }
+
+
+
+function putInTeams(){
+    let randomName = Math.floor(Math.random()*people.length)
+    randomUl.innerHTML += `<li class="team">` + people[randomName] + `</li>`
 }
+
+
+//-----------creating teams onload------
+
+function createTeams(){
+    for(let i=0;i<amountOfTeams;i++){
+        let newTeam = document.createElement("ul")
+        newTeam.innerText = "Team" + i
+        newTeam.classList.add("team")
+        let appendTo = document.getElementsByTagName("body")[0]
+        appendTo.appendChild(newTeam)
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // console.log(people)
+
+// // let arrayPeople = people.length
+
+
+// // function assign(){
+// //     const valueText = inputText.value
+// //     if(valueText !== ''){
+// //         container.innerHTML += `<div class="item"><span>`+ valueText + '</span></div>'
+// //         people.push({text:valueText})
+// //         inputText.value = ""
+// //     }
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

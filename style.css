@@ -1,11 +1,21 @@
 .item{
     border: 1px solid black;
     width: 40%;
+    margin-bottom: 25px;
 }
 .item span{
     padding: 10px;
+    color: red;
 }
 
 body{
     padding: 35px;
+}
+
+ul{
+    background-color: yellow;
+}
+
+.team{
+    width: 200px;
 }
